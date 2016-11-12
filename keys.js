@@ -10,5 +10,5 @@ module.exports = {
   'Ab': ['Ab', 'bb', 'c', 'Db', 'Eb', 'f', 'gdim', 'Ab'],
   'A': ['A', 'b', 'c#', 'D', 'E', 'f#', 'g#dim', 'A'],
   'Bb': ['Bb', 'c', 'd', 'Eb', 'F', 'g', 'adim', 'Bb'],
-  'B': ['B', 'c#', 'd#', 'E', 'F#', 'g#', 'a#', 'B']
+  'B': ['B', 'c#', 'd#', 'E', 'F#', 'g#', 'a#', 'B' ]
 };
