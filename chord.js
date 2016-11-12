@@ -26,3 +26,5 @@ class Chord {
   }
   
 }
+
+window.Chord = Chord;
