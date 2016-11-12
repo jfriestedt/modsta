@@ -1,7 +1,16 @@
 import React from 'react';
+import KeySelector from './components/keySelector';
+import Keys from '../keys';
+const keySigs = Object.keys(Keys);
 
-module.exports = React.createClass({
-  render: function () {
-    return <div><h1>HI!!!</h1></div>;
+
+export default class App extends React.Component {
+  render() {
+    return (
+      <div>
+        <h1>HI!!!</h1>
+        <KeySelector options={ keySigs } />
+      </div>
+    );
   }
-});
+}
