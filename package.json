@@ -19,6 +19,7 @@
   "dependencies": {
     "babel-loader": "^6.2.7",
     "babel-preset-react": "^6.16.0",
+    "lodash": "^4.16.6",
     "react": "^15.3.2",
     "react-dom": "^15.3.2"
   }

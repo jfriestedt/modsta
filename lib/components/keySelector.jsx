@@ -4,15 +4,15 @@ const keySigs = Object.keys(Keys);
 
 export default class KeySelector extends React.Component {
   get options() {
-    return this.props.options.map((option) => {
-      return <option value={ option }>{ option }</option>;
+    return this.props.options.map((option, idx) => {
+      return <option value={ option } key={ idx }>{ option }</option>;
     });
   }
 
   render() {
     return (
       <div className='key-selector'>
-        <select>
+        <select onChange={ this.props.onChange }>
           { this.options }
         </select>
       </div>
