@@ -1,5 +1,5 @@
 module.exports = {
-  entry: './chord.js',
+  entry: './index.jsx',
   output: {
     path: '',
     filename: 'bundle.js',
