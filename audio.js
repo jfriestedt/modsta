@@ -1,37 +1,53 @@
 let ctx = new AudioContext();
 
 const frequencies = {
-  'c': 261.63,
-  'db': 554.37,
-  'd': 523.25,
-  'eb': 622.25,
-  'e': 659.25,
-  'f': 698.46,
-  'gb': 739.99,
-  'g': 783.99,
-  'ab':830.61,
-  'a': 880.00,
-  'bb': 932.33,
-  'b': 987.77
+  'c': 261.6,
+  'db': 277.2,
+  'd': 293.7,
+  'eb': 311.1,
+  'e': 329.6,
+  'f': 349.2,
+  'gb': 370.0,
+  'g': 392.0,
+  'ab': 415.3,
+  'a': 440.0,
+  'bb': 466.2,
+  'b': 493.9
 };
 
-let play = function(chords){
-  for (let i = 0; i < chords.length; i++){
-    let root = chords[i];
+module.exports = {
+  playChords: function(chords){
+    let duration = 1;
+    chords.forEach((chord, idx) => {
+      setTimeout(() => {
+        this.play(chord, duration);
+      }, (duration * idx * 1000));
+    });
+  },
+  play: function(chord, duration){
+    let root = chord.toLowerCase();
     let chordTones = [root];
     let noteNames = Object.keys(frequencies);
     let rootIdx = (noteNames.indexOf(root.toLowerCase()));
-    let thirdIdx;
+    let third;
     
-    if (root.toLowerCase() === root){
+    if (chord.toLowerCase() === chord){
       //minor
-      thirdIdx = (noteNames.indexOf(root) + 3) % 12;
+      third = noteNames[(noteNames.indexOf(root) + 3) % 12];
     }
     else {
-      thirdIdx = (rootIdx + 3 % 12);
+      third = noteNames[(rootIdx + 4 % 12)];
     }
-    let fifthIdx = (rootIdx + 7 % 12);
-    
-    chordTones.push(thirdIdx, fifthIdx);
+    let fifth = noteNames[((rootIdx + 7) % 12)];
+    chordTones.push(third, fifth);
+    chordTones.forEach(function(tone){
+      let osc = ctx.createOscillator();
+      osc.frequency.value = frequencies[tone];
+      osc.type = 'sawtooth';
+      osc.start();
+      osc.connect(ctx.destination);
+      osc.stop(ctx.currentTime + 1);
+    });
   }
 };
+  

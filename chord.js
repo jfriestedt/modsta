@@ -1,5 +1,6 @@
 import Keys from './keys';
 import Cadences from './cadences';
+import Audio from './audio';
 
 class Chord {
   constructor (chordName, index, parentChord, numeral, quality, key, callbacks) {
@@ -52,9 +53,13 @@ class Chord {
     }
   }
   
-  
-  
+  pickMe () {
+    if (this.parent || this.key !== this.parent.key){
+      this.parent.key = this.key;
+    }
+  }
 }
 
 window.Chord = Chord;
 window.Keys = Keys;
+window.Audio = Audio;
