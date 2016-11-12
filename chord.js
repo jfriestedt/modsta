@@ -27,3 +27,4 @@ class Chord {
 }
 
 window.Chord = Chord;
+window.Keys = Keys;

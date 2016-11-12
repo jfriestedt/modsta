@@ -89,6 +89,7 @@
 	}();
 	
 	window.Chord = Chord;
+	window.Keys = _keys2.default;
 
 /***/ },
 /* 1 */
