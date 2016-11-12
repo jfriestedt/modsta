@@ -25,3 +25,5 @@ class Chord {
     return possibleKeys;
   }
 }
+
+window.Chord = Chord;

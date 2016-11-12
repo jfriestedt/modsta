@@ -84,9 +84,11 @@
 	      return possibleKeys;
 	    }
 	  }]);
-
+	
 	  return Chord;
 	}();
+	
+	window.Chord = Chord;
 
 /***/ },
 /* 1 */
