@@ -1,2 +1,5 @@
 .jshintrc
 node_modules
+npm-debug.log
+bundle.js.map
+bundle.js
