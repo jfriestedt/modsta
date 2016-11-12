@@ -1,5 +1,5 @@
 module.exports = {
-  entry: 'modsta.jsx',
+  entry: './chord.js',
   output: {
     path: '',
     filename: 'bundle.js',
@@ -9,10 +9,7 @@ module.exports = {
       {
         test: [/\.jsx?$/, /\.js?$/],
         exclude: /(node_modules)/,
-        loader: 'babel',
-        query: {
-          presets: ['es2015', 'react']
-        }
+        loader: 'babel-loader',
       }
     ]
   },
