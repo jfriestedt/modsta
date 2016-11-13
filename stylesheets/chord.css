@@ -1,0 +1,23 @@
+
+.chord-index {
+  display: flex;
+  flex-direction: row;
+}
+
+  .chord-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 2px solid tomato;
+    height: 50px;
+    width: 50px;
+    margin: 10px;
+    text-align: center;
+    font-size: 20px;
+    color: tomato;
+  }
+
+  .chord-item:hover {
+    opacity: .6;
+  }
