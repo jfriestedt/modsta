@@ -4,20 +4,36 @@
   flex-direction: row;
 }
 
-  .chord-item {
+  .chord-item-container {
+    color: tomato;
+    display: flex;
+    flex-direction: row;
+    width: auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 50%;
-    border: 2px solid tomato;
-    height: 50px;
-    width: 50px;
-    margin: 10px;
-    text-align: center;
-    font-size: 20px;
-    color: tomato;
   }
 
-  .chord-item:hover {
-    opacity: .6;
-  }
+    .chord-item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      border: 2px solid tomato;
+      height: 50px;
+      width: 50px;
+      text-align: center;
+      font-size: 20px;
+    }
+
+    .chord-item:hover {
+      opacity: .6;
+    }
+
+    .branch {
+      width: 30px;
+      border: 1px solid tomato;
+      height: 0;
+      padding: 0;
+      margin: 0;
+    }
