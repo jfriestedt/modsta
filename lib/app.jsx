@@ -1,5 +1,6 @@
 import React from 'react';
 import KeySelector from './components/keySelector';
+import PlayButton from './components/playButton';
 import Keys from '../keys';
 import { last } from 'lodash';
 const keySigs = Object.keys(Keys);
@@ -10,7 +11,7 @@ export default class App extends React.Component {
     super();
 
     this.state = {
-      sequence: []
+      sequence: ['A', 'b', 'E', 'gb']
     };
   }
 
@@ -19,7 +20,7 @@ export default class App extends React.Component {
   }
 
   onChange(value) {
-
+    
   }
 
   get sequence() {
@@ -31,6 +32,7 @@ export default class App extends React.Component {
       <div id='app'>
         <h1>HI!!!</h1>
         <KeySelector options={ keySigs } onChange={ this.onChange }/>
+        <PlayButton sequence={this.state.sequence} />
         { this.sequence }
       </div>
     );

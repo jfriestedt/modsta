@@ -36,7 +36,7 @@ module.exports = {
       third = noteNames[(noteNames.indexOf(root) + 3) % 12];
     }
     else {
-      third = noteNames[(rootIdx + 4 % 12)];
+      third = noteNames[(noteNames.indexOf(root) + 4) % 12];
     }
     let fifth = noteNames[((rootIdx + 7) % 12)];
     chordTones.push(third, fifth);
