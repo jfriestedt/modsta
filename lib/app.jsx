@@ -29,9 +29,6 @@ export default class App extends React.Component {
       const parentChord = this.lastChord || null;
 
       chord = new Chord(value, 0, parentChord, 1, 'major', value, null);
-      this.setState({
-        sequence: this.state.sequence.concat(chord)
-      });
     } else {
       chord = find(this.currentChildren, (ch) => {
         return ch.chordName == value;
@@ -39,6 +36,7 @@ export default class App extends React.Component {
     }
 
     this.setState({
+      sequence: this.state.sequence.concat(chord),
       currentChildren: chord.generateChildren()
     });
   }
@@ -71,13 +69,13 @@ export default class App extends React.Component {
     return this.state.currentChildren.map((child) => (child.chordName));
   }
 
+        // <KeySelector options={ this.options } onChange={ this.onChange.bind(this) }/>
   render() {
     return (
       <div id='app'>
-        <KeySelector options={ keySigs } onChange={ this.onChange }/>
+        <KeySelector options={ this.options } onChange={ this.onChange.bind(this) }/>
         <PlayButton sequence={this.state.sequence} />
         <ChordIndex sequence={this.sequence} clickChord={this.onChange} />
-        // <KeySelector options={ this.options } onChange={ this.onChange.bind(this) }/>
       </div>
     );
   }
