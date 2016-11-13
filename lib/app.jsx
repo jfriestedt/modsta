@@ -11,7 +11,7 @@ export default class App extends React.Component {
     super();
 
     this.state = {
-      sequence: ['A', 'b', 'E', 'gb']
+      sequence: []
     };
   }
 
