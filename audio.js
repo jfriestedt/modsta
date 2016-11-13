@@ -52,7 +52,7 @@ module.exports = {
     if (chord.toLowerCase() === chord){
       //minor
       third = noteNames[(noteNames.indexOf(root) + 3) % 12];
-      console.log("third is " + third);
+
     }
     else {
       third = noteNames[(noteNames.indexOf(root) + 4) % 12];
