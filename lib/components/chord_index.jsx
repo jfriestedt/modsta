@@ -1,9 +1,16 @@
 import React from 'react';
+import { sample } from 'lodash';
 
-const Chord = ({ chordName, clickChord, parent }) => {
-  let branchToChild = parent ? "branch" : ""
+const Chord = ({ chordName, clickChord, parent, keyChanged }) => {
+  const colors = ["tomato", "lightblue", "darkgreen", "lightgray", "pink", "yellow", "purple"];
+  let branchToChild = parent ? "branch" : "";
+  let newColor = "tomato";
+  if(keyChanged) {
+    newColor = sample(colors);
+  }
+
   return(
-    <div className="chord-item-container">
+    <div className="chord-item-container" style={{color: newColor}}>
       <div className={branchToChild}></div>
       <div onClick={clickChord} className="chord-item">
         {chordName}
@@ -18,8 +25,9 @@ const ChordIndex = ({ sequence, clickChord }) => {
       <Chord chordName={chord.chordName}
              clickChord={clickChord}
              parent={chord.parentChord}
-             changedKey={chord.key !== chord.parentChord.key}
-             key={i}/>)
+             keyChanged={chord.parentChord ? chord.key !== chord.parentChord.key : false}
+             key={i}/>
+    )
   });
 
   return(

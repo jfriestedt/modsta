@@ -1,18 +1,19 @@
 
 .chord-index {
+  margin-top: 10px;
   display: flex;
   flex-direction: row;
-  color: blue;
+  color: tomato;
 }
 
   .chord-item-container {
-    /*color: tomato;*/
     display: flex;
     flex-direction: row;
     width: auto;
     display: flex;
     justify-content: center;
     align-items: center;
+    /*color: tomato;*/
   }
 
     .chord-item {
