@@ -2,7 +2,7 @@ import Keys from './keys';
 import Cadences from './cadences';
 import Audio from './audio';
 
-class Chord {
+export class Chord {
   constructor (chordName, index, parentChord, numeral, quality, key, callbacks) {
     this.chordName = chordName;
     this.index = index;
@@ -12,7 +12,7 @@ class Chord {
     this.callbacks = callbacks;
     this.key = key;
   }
-  
+
   generateChildren() {
     let children = [];
     // let parentKey = this.parentChord ? this.parentChord.key : null;
@@ -52,7 +52,7 @@ class Chord {
       return [this.key];
     }
   }
-  
+
   pickMe () {
     if (this.parent || this.key !== this.parent.key){
       this.parent.key = this.key;
