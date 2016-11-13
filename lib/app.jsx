@@ -69,7 +69,6 @@ export default class App extends React.Component {
     return this.state.currentChildren.map((child) => (child.chordName));
   }
 
-        // <KeySelector options={ this.options } onChange={ this.onChange.bind(this) }/>
   render() {
     return (
       <div id='app'>

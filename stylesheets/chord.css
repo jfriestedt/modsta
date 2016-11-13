@@ -1,17 +1,19 @@
 
 .chord-index {
+  margin-top: 10px;
   display: flex;
   flex-direction: row;
+  color: tomato;
 }
 
   .chord-item-container {
-    color: tomato;
     display: flex;
     flex-direction: row;
     width: auto;
     display: flex;
     justify-content: center;
     align-items: center;
+    /*color: tomato;*/
   }
 
     .chord-item {
@@ -19,7 +21,7 @@
       justify-content: center;
       align-items: center;
       border-radius: 50%;
-      border: 2px solid tomato;
+      border: 2px solid;
       height: 50px;
       width: 50px;
       text-align: center;
@@ -32,7 +34,7 @@
 
     .branch {
       width: 30px;
-      border: 1px solid tomato;
+      border: 1px solid;
       height: 0;
       padding: 0;
       margin: 0;
